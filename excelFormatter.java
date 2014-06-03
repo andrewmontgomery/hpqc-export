@@ -183,7 +183,7 @@ public class excelFormatter extends WindowAdapter implements WindowListener,
 
 			new excelFormatter();
 
-			String currentDir = System.getProperty("C:\\export");
+			String currentDir = System.getProperty("user.dir");
 
 			Dimension minsize = new Dimension(500, 500);
 			JFrame frame = new JFrame("HPQC Export-Helper");
@@ -208,7 +208,6 @@ public class excelFormatter extends WindowAdapter implements WindowListener,
 
 				if ((listOfFiles[i].isFile()) && extension.equals("xls")) {
 					listOfExcelFiles.add(listOfFiles[i]);
-					System.out.println(listOfFiles[i]);
 				}
 			}
 
@@ -327,11 +326,11 @@ public class excelFormatter extends WindowAdapter implements WindowListener,
 							int_ext = "External";
 
 						row.createCell(0).setCellValue(
-								project + "\\" + area + "\\" + int_ext + "\\"
-										+ testcase);
+								project + "\\" + project + "_" + area + "-"
+										+ int_ext + "\\" + testcase);
 						totalrow.createCell(0).setCellValue(
-								project + "\\" + area + "\\" + int_ext + "\\"
-										+ testcase);
+								project + "\\" + project + "_" + area + "-"
+										+ int_ext + "\\" + testcase);
 						if (y < 10) {
 							row.createCell(1)
 									.setCellValue(testcase + "_00" + y);
